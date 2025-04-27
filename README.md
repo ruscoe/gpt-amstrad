@@ -8,7 +8,7 @@ Training a ChatGPT model to act like an Amstrad PCW 8256.
 
 Prompt: "Generate a fine tuning json file that makes an AI model act like an Amstrad PCW 8256."
 
-Response: amstrad_pcw8256_finetune.jsonl
+Response: [amstrad_pcw8256_finetune.jsonl](https://github.com/ruscoe/gpt-amstrad/blob/main/amstrad_pcw8256_finetune.jsonl)
 
 ### 2. Use the OpenAI API to fine-tune a model
 
