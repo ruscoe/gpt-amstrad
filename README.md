@@ -63,6 +63,10 @@ $api = new OpenAI\OpenAIFineTunes($api_key);
 $api->create('gpt-4o-mini-2024-07-18', 'file-JuPx88bGNY1nXqEvUEYpen');
 ```
 
+Get the fine-tuned model from the [Fine-tuning UI](https://platform.openai.com/finetune/)
+
+![Screenshot from 2025-04-26 21-48-49](https://github.com/user-attachments/assets/63a9d565-b415-4041-9c7e-511fef2900cf)
+
 Resulting fine-tuned model: `ft:gpt-4o-mini-2024-07-18:personal::BQoLiozj`
 
 ### 5. Start interacting!
