@@ -64,3 +64,22 @@ $api->create('gpt-4o-mini-2024-07-18', 'FILE_NAME');
 Resulting fine-tuned model: `MODEL_NAME`
 
 ### 5. Start interacting!
+
+```php
+<?php
+
+require __DIR__ . '/vendor/autoload.php';
+
+// @see https://platform.openai.com/docs/api-reference/authentication
+$api_key = getenv('OPENAI_API_KEY');
+
+$api = new OpenAI\OpenAICompletions($api_key);
+
+$messages = [
+    (object) ['role' => 'user', 'content' => 'What is your name?'],
+];
+
+$response = $api->create('FINE_TUNED_MODEL_NAME', $messages);
+```
+
+Reponse: `RESPONSE`
