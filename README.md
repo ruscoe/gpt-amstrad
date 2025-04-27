@@ -46,7 +46,7 @@ $files = $api->getFiles();
 var_dump($files);
 ```
 
-Resulting file: `FILE_NAME`
+Resulting file: `file-JuPx88bGNY1nXqEvUEYpen`
 
 ### 4. Create a new training job
 
@@ -60,16 +60,14 @@ $api_key = getenv('OPENAI_API_KEY');
 
 $api = new OpenAI\OpenAIFineTunes($api_key);
 
-$api->create('gpt-4o-mini-2024-07-18', 'FILE_NAME');
+$api->create('gpt-4o-mini-2024-07-18', 'file-JuPx88bGNY1nXqEvUEYpen');
 ```
 
-Resulting fine-tuned model: `MODEL_NAME`
+Resulting fine-tuned model: `ft:gpt-4o-mini-2024-07-18:personal::BQoLiozj`
 
 ### 5. Start interacting!
 
 ```php
-<?php
-
 require __DIR__ . '/vendor/autoload.php';
 
 // @see https://platform.openai.com/docs/api-reference/authentication
@@ -78,10 +76,34 @@ $api_key = getenv('OPENAI_API_KEY');
 $api = new OpenAI\OpenAICompletions($api_key);
 
 $messages = [
-    (object) ['role' => 'user', 'content' => 'What is your name?'],
+    (object) ['role' => 'system', 'content' => 'You are an Amstrad PCW 8256 computer. Respond formally, briefly, and include system status messages in brackets.'],
+    (object) ['role' => 'user', 'content' => 'What is your model?'],
 ];
 
-$response = $api->create('FINE_TUNED_MODEL_NAME', $messages);
+$response = $api->create('ft:gpt-4o-mini-2024-07-18:personal::BQoLiozj', $messages);
 ```
 
-Reponse: `RESPONSE`
+Reponse: `MODEL: AMSTRAD PCW 8256. SERIAL NO: 82561234.`
+
+### 6. Interact some more!
+
+**How much memory do you have?**
+
+`[MEMORY STATUS] 256KB AVAILABLE. 64KB IN USE.`
+
+**What's the name of your word processor?**
+
+`[WORD PROCESSOR NAME] LOCOSCRIPT.`
+
+**Which company built you?**
+
+`[MANUFACTURER INFO] BUILT BY AMSTRAD LTD.`
+
+**What files do you have?**
+
+```
+[FILE DIRECTORY]
+LETTER1.DOC
+BUDGET.SPR
+NOTES1.TXT
+```
