@@ -1,6 +1,6 @@
 # GPT Amstrad
 
-Training a ChatGPT model to act like an Amstrad PCW8256.
+Training a ChatGPT model to act like an Amstrad PCW 8256.
 
 ## Steps
 
