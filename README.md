@@ -1,3 +1,5 @@
+![gpt_amstrad_banner](https://github.com/user-attachments/assets/0c2b4032-ae4a-469e-a09e-e2b968b5bc70)
+
 # GPT Amstrad
 
 Training a ChatGPT model to act like an Amstrad PCW 8256.
